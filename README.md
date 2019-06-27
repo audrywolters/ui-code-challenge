@@ -10,7 +10,7 @@ For this challenge, you are tasked with creating a Netflix-style movie queue. Th
 As our products are built in React, we would prefer the solution to this challenge would follow suit. However, if you are unfamiliar with React but an absolute ninja in Angular for example, we are able to work with that. Otherwise, you are encouraged to add any dependencies/technologies to make this task easier.
 
 ## Logistics
-If at any time you have a question about this task, feel free to reach out to one of the development team members. When you have finished we would like you to **submit your code by way of Dropbox, Google Drive, etc. (*not* a Git branch/fork).**
+If at any time you have a question about this task, feel free to reach out to one of the development team members. When you have finished we would like you to **submit your code using the Greenhouse upload link or Dropbox, Google Drive, etc. (*not* a Git branch/fork).**
 
 ## Setup
 
