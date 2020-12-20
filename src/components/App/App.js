@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import Catalog from '../Catalog/Catalog';
 
 function App() {

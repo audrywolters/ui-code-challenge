@@ -5,7 +5,7 @@ class Catalog extends Component {
     render() {
         return (
             <>
-                <div>hieeeeee</div>
+                <div>I am checking the css</div>
             </>
         )
     }
