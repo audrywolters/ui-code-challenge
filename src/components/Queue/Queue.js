@@ -5,6 +5,7 @@ class Queue extends Component {
 
     render() {
         return (
+            // article is for flexbox
             <article className="queue">
                 <h2>Queue Header</h2>
             </article>
