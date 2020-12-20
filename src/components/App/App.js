@@ -1,11 +1,12 @@
 import React from 'react';
+import Main from '../Main/Main';
 import './App.css';
-import Catalog from '../Catalog/Catalog';
 
 function App() {
   return (
     <>
-      <Catalog />
+      <Main />
+      {/* cool meta stuff to come */}
     </>
   );
 }

@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import './Catalog.css';
 
 class Catalog extends Component {
 
     render() {
         return (
             <>
-                <div>I am checking the css</div>
+                <h2>Catalog Header</h2>
             </>
         )
     }
