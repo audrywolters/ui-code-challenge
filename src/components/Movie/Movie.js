@@ -11,9 +11,13 @@ class Movie extends Component {
     // showAddHover: !this.state.isInQueue <-- will work?
   };
 
+  clickMovie(e) {
+    console.log('clicked movie!: ', e.target.textContent);
+  }
+
   render() {
     return (
-      <li>{this.props.movie}</li>
+      <li onClick={this.clickMovie}>{this.props.movie}</li>
     );
   }
 }

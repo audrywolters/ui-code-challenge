@@ -8,15 +8,11 @@ class Catalog extends Component {
   };
 
   componentDidMount() {
-    console.log("getting movie list");
     this.getMovieList();
   }
 
   getMovieList() {
     // hard coding for now
-    // will add images and queue state
-    // also if the poster image should be shown
-    // and if hover is thing
     let movieList = ["Totoro", "Kiki", "Spirited Away"];
 
     // grab all the movies and 'save them'
