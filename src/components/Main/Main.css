@@ -1,17 +1,16 @@
-
 header {
-    color: purple;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
+  color: purple;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
 }
 
 /* holds catalog and queue */
 section {
-    display: flex;
+  display: flex;
 }
 
 /* catalog and queue are each one */
 article {
-    flex: 0 0 50%;
+  flex: 0 0 50%;
 }
