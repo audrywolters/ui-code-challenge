@@ -1,22 +1,17 @@
+
 header {
-    background-color: lightblue;
-}
-
-section {
-    display: flex;
-}
-
-article {
-    flex: 0 0 50%;
-}
-
-h1 {
     color: purple;
     margin: 0;
     padding: 10px;
     text-align: center;
 }
 
-h2 {
-    color: gray;
+/* holds catalog and queue */
+section {
+    display: flex;
+}
+
+/* catalog and queue are each one */
+article {
+    flex: 0 0 50%;
 }

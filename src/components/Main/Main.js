@@ -4,17 +4,14 @@ import Queue from '../Queue/Queue';
 import './Main.css';
 
 class Main extends Component {
-
   render() {
     return (
-        <>
-          <header>
-              <h1>AudryFlix</h1>
-          </header>
-          <section>
-              <Catalog />
-              <Queue />
-          </section>
+      <>
+        <header>AudryFlix</header>
+        <section>
+          <Catalog />
+          <Queue />
+        </section>
       </>
     );
   }

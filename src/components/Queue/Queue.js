@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
-import './Queue.css';
+import React, { Component } from "react";
+import "./Queue.css";
 
 class Queue extends Component {
-
-    render() {
-        return (
-            // article is for flexbox
-            <article className="queue">
-                <h2>Queue Header</h2>
-            </article>
-        )
-    }
+  render() {
+    return (
+      <>
+        <article className="queue">
+          <header>Queue</header>
+        </article>
+      </>
+    );
+  }
 }
 
 export default Queue;
