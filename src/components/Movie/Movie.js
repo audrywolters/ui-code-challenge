@@ -13,9 +13,7 @@ class Movie extends Component {
 
   render() {
     return (
-      <li>
-        <p>{this.props.movie}</p>
-      </li>
+      <li>{this.props.movie}</li>
     );
   }
 }
