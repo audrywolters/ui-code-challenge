@@ -1,25 +1,21 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import MovieList from "../MovieList/MovieList";
 import "./Catalog.css";
 
+// Catalog is the boss of the list of movies to pick from
+// it controls whether or not a movie is in the Q
+// what the movies are
+// etc.
+// the other components are kind of dumb in comparison :)
 class Catalog extends Component {
   state = {
-    movieList: [],
+    movieList: []
   };
 
   componentDidMount() {
-    this.getMovieList();
-  }
-
-  getMovieList() {
-    // hard coding for now
-    let movieList = ["Totoro", "Kiki", "Spirited Away"];
-
-    // grab all the movies and 'save them'
-    this.setState({
-      movieList: movieList,
-    });
-    // AUDRY - handle error
+    // ask saga to help us put the movies in its storage
+    this.props.dispatch({ type: "FETCH_MOVIE_LIST" });
   }
 
   render() {
@@ -34,4 +30,8 @@ class Catalog extends Component {
   }
 }
 
-export default Catalog;
+const mapStateToProps = (reduxState) => ({
+  reduxState
+});
+
+export default connect(mapStateToProps)(Catalog);

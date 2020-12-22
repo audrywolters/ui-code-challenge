@@ -1,4 +1,4 @@
-const changeReducer = (state = "", action) => {
+const movieListReducer = (state = [], action) => {
   switch (action.type) {
     case "SET_MOVIE_LIST":
       return action.payload;
@@ -9,4 +9,4 @@ const changeReducer = (state = "", action) => {
   }
 };
 
-export default changeReducer;
+export default movieListReducer;
