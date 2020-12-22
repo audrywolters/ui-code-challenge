@@ -1,4 +1,4 @@
-// this is a fake 'table' from a fake 'DB'
+// this is a fake table from a fake DB
 // i'd rather spend my time on CSS than the backend
 
 let movieList = [

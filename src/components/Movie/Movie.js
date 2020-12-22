@@ -35,7 +35,7 @@ class Movie extends Component {
 
   onClickAddorRemove(e) {
 
-
+    console.log('clicked add/remove');
     // ask saga to help us put the movies in its storage
     // this.props.dispatch({ type: "EDIT_MOVIE", payload: this.state.id });
 
