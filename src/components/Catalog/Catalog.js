@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MovieList from "../MovieList/MovieList";
+import Movie from "../Movie/Movie";
 import "./Catalog.css";
 
 // Catalog is the boss of the list of movies to pick from
@@ -23,7 +23,12 @@ class Catalog extends Component {
       <>
         <article className="catalog">
           <header>Catalog</header>
-          <MovieList movieList={this.state.movieList} />
+          {/* print all the movies we grabbed from movieListSaga (the mock backend too) */}
+          <ul>
+            {this.props.reduxState.movieList.map((movie) => (
+              <Movie title={movie.title} key={movie.id} />
+            ))}
+          </ul>
         </article>
       </>
     );
