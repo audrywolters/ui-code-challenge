@@ -10,7 +10,7 @@ import "./Catalog.css";
 // the other components are kind of dumb in comparison :)
 class Catalog extends Component {
   state = {
-    movieList: []
+    movieList: [],
   };
 
   componentDidMount() {
@@ -26,7 +26,14 @@ class Catalog extends Component {
           {/* print all the movies we grabbed from movieListSaga (the mock backend too) */}
           <ul>
             {this.props.reduxState.movieList.map((movie) => (
-              <Movie title={movie.title} key={movie.id} />
+              <Movie
+                key={movie.id}
+                title={movie.title}
+                poster={movie.poster}
+                // movie is being sent to the Queue
+                // we will need to use this state later
+                isInQueue="false"
+              />
             ))}
           </ul>
         </article>
@@ -36,7 +43,7 @@ class Catalog extends Component {
 }
 
 const mapStateToProps = (reduxState) => ({
-  reduxState
+  reduxState,
 });
 
 export default connect(mapStateToProps)(Catalog);

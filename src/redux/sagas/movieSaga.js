@@ -1,8 +1,8 @@
 import { put, takeLatest } from "redux-saga/effects";
-import movieList from '../movieList';
+//import movieList from '../mockMovieListDB';
 
-// // wow! how could a DB be here in a saga? :P
-// // let's just pretend this has returned from a backend
+// wow! how could a DB be here in a saga? :P
+// let's just pretend this has returned from a backend
 // let movieList = [
 //   { id: 1, title: "one",   poster: "images/1.jpg", isInQueue: false, queuePosition: 1 },
 //   { id: 2, title: "two",   poster: "images/2.jpg", isInQueue: false, queuePosition: 2 },
@@ -15,20 +15,20 @@ import movieList from '../movieList';
 
 // GET movie by ID() { }
 
-function* fetchMovieList() {
-  try {
-    yield put({ type: "SET_MOVIE_LIST", payload: movieList });
-  } catch (error) {
-    console.log("movie list GET request failed", error);
-  }
-}
+// function* fetchMovieList() {
+//   try {
+//     yield put({ type: "SET_MOVIE_LIST", payload: movieList });
+//   } catch (error) {
+//     console.log("movie list GET request failed", error);
+//   }
+// }
 
 function* fetchMovie() {
-  // try {
-  //   yield put({ type: "SET_MOVIE", payload: movie });
-  // } catch (error) {
-  //   console.log("movie GET request failed", error);
-  // }
+  try {
+    yield put({ type: "SET_MOVIE", payload: movie });
+  } catch (error) {
+    console.log("movie GET request failed", error);
+  }
 }
 
 // currently, all we are doing is changing the queue position
@@ -36,11 +36,9 @@ function* fetchMovie() {
 function* updateMovie(action) {
 
 
-
-
   try {
 
-    //const response = // AUDRY - here replace axios call w/ external method
+    const response = // AUDRY - here replace axios call w/ external method
     //yield axios.put( '/api/change', action.payload );   
     
     // AUDRY - we prolly don't need to return a value...
@@ -59,10 +57,9 @@ function* updateMovie(action) {
   }
 }
 
-function* movieListSaga() {
-  yield takeLatest("FETCH_MOVIE_LIST", fetchMovieList);
+function* movieSaga() {
   yield takeLatest("FETCH_MOVIE", fetchMovie);
   yield takeLatest("EDIT_MOVIE", updateMovie);
 }
 
-export default movieListSaga;
+export default movieSaga;
