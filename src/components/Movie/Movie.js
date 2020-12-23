@@ -2,75 +2,54 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class Movie extends Component {
+
+  // will we ever use this
   state = {
-    id: -1,
-    title: "",
-    poster: "",
-    queuePosition: -1,
     isInQueue: false,
-    showPoster: true,
-    displayInCatalog: true,
   };
 
-  componentDidMount() {
+  onClickAddToQueue(e) {
+    // we may need to chain our way up the DOM...
+    // or use ref >:P
+    console.log("clicked add/remove id: ", e.target);
+    console.log("clicked add/remove id: ", e.target.id);
 
-    // this.setState({
-    //   feeling: event.target.value,
-    // });
-
-    // send feeling value to redux bucket
-    //this.props.dispatch({ type: "SET_FEELING", payload: event.target.value });
-
-    // we need to keep this stuff. is it in redux?
-    this.setState({
-      key: this.props.id,
-      title: this.props.title,
-      poster: this.props.poster,
-      queuePosition: this.props.queuePosition,
-      isInQueue: this.props.isInQueue,
-      showPoster: !this.props.isInQueue,
-      displayInCatalog: !this.props.isInQueue,
+    this.props.dispatch({
+      type: "CHANGE_QUEUE_STATUS",
+      action: { id: e.target.id, isInQueue: true },
     });
-  }
 
-  onClickAddorRemove(e) {
-
-    console.log('clicked add/remove');
-    // ask saga to help us put the movies in its storage
-    // this.props.dispatch({ type: "EDIT_MOVIE", payload: this.state.id });
-
-    // remove from DOM
-    let movieLine = e.target.parentElement;
-    // remove from Catalog!
-    movieLine.remove();
-
-    // if (this.props.isInQueue) {
-    //   // remove from the Catalog. how do we know which thing we're in
-    //   // i guess isInQueue
-    //   // this is just the button, so find the <li> parent
-    //   let movieLine = e.target.parentElement;
-    //   // remove from Catalog!
-    //   movieLine.remove();
-    // }
-
-    // saga call
-    // put in Q
-    // remove from Catalog
+    // hopefully this will happen automatically via reducer...
+    // // remove from DOM
+    // let movieLine = e.target.parentElement;
+    // // remove from Catalog!
+    // movieLine.remove();
   }
 
   render() {
     return (
-      <li onClick={this.clickMovie}>
+      <div>
         <span>{this.props.title}</span>
         <img alt="the movie poster" src={this.props.poster} />
-        <button onClick={this.onClickAddorRemove}>+</button>
-      </li>
+
+        <button id={this.props.id} onClick={this.onClickAddToQueue}>
+          +
+        </button>
+        {/* 
+        {
+            this.state.isDisplayingImage
+            ? 
+            <img src={ this.props.thisPicture.path } />
+            :
+            <div className="description">{ this.props.thisPicture.description }</div>    
+          } */}
+      </div>
     );
   }
 }
 
 const putReduxStateonProps = (reduxState) => ({
-  reduxState,
+  reduxState
 });
 
 export default connect(putReduxStateonProps)(Movie);

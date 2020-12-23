@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import Movie from "../Movie/Movie";
 import "./Queue.css";
 
 class Queue extends Component {
@@ -7,10 +9,25 @@ class Queue extends Component {
       <>
         <article className="queue">
           <header>Queue</header>
+          <div>
+            {this.props.queueMovieList.map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                title={movie.title}
+                poster={movie.poster}
+                isInQueue={movie.isInQueue}
+              />
+            ))}
+          </div>
         </article>
       </>
     );
   }
 }
 
-export default Queue;
+const mapStateToProps = (reduxState) => ({
+  reduxState,
+});
+
+export default connect(mapStateToProps)(Queue);
