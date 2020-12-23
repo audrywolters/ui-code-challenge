@@ -8,13 +8,9 @@ class Movie extends Component {
     isInQueue: false,
   };
 
-  onClickAddToQueue(e) {
-    // we may need to chain our way up the DOM...
-    // or use ref >:P
-    console.log("clicked add/remove id: ", e.target);
-    console.log("clicked add/remove id: ", e.target.id);
-
+  onClickAddToQueue = (e) => {
     this.props.dispatch({
+
       type: "CHANGE_QUEUE_STATUS",
       action: { id: e.target.id, isInQueue: true },
     });
@@ -32,6 +28,7 @@ class Movie extends Component {
         <span>{this.props.title}</span>
         <img alt="the movie poster" src={this.props.poster} />
 
+        {/* we need to if statement here too ( - ) */}
         <button id={this.props.id} onClick={this.onClickAddToQueue}>
           +
         </button>
