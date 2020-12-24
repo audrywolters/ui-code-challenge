@@ -44,7 +44,7 @@ class App extends Component {
     });
   }
 
-  onClickAddOrRemove = ( movieID ) => {
+  onClickMoveToOtherList = (movieID) => {
     let clickedMovie = this.state.movieList.find(m => m.id === movieID);
 
     if (clickedMovie.isInQueue) {
@@ -69,7 +69,7 @@ class App extends Component {
     this.setState({
       catalogMovieList: newCatalog,
       queueMovieList: newQueue
-    })
+    });
   }
 
   sendMovieToQueue(clickedMovie) {
@@ -87,17 +87,21 @@ class App extends Component {
     this.setState({
       catalogMovieList: newCatalog,
       queueMovieList: newQueue
-    })
+    });
   }
 
   render() {
-
     return (
       <>
         <header>AudryFlix</header>
         <section>
-          <Catalog catalogMovieList={this.state.catalogMovieList} onClickAddOrRemove={this.onClickAddOrRemove} />
-          <Queue     queueMovieList={this.state.queueMovieList}   onClickAddOrRemove={this.onClickAddOrRemove} />
+          <Catalog catalogMovieList={this.state.catalogMovieList} 
+                   onClickMoveToOtherList={this.onClickMoveToOtherList}
+          />
+          <Queue queueMovieList={this.state.queueMovieList}
+                 onClickMoveToOtherList={this.onClickMoveToOtherList} 
+                 onClickQueueOrder={this.onClickQueueOrder} 
+          />
         </section>
       </>
     );

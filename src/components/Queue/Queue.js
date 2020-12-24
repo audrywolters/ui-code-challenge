@@ -21,7 +21,7 @@ class Queue extends Component {
                 title={movie.title}
                 poster={movie.poster}
                 isInQueue={movie.isInQueue}
-                onClickAddOrRemove={this.props.onClickAddOrRemove}
+                onClickMoveToOtherList={this.props.onClickMoveToOtherList}
               />
             ))}
           </div>
