@@ -3,3 +3,47 @@ body {
   height: 100%;
   margin: 0;
 }
+
+header {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+
+  /* just to show what's what */
+  border: 1px solid rgb(217, 0, 255);
+}
+
+/* holds catalog and queue */
+section {
+  display: flex;
+
+  /* just to show what's what */
+  border: 2px dashed rgb(40, 20, 219);
+}
+
+/* catalog and queue are each one */
+article {
+  flex: 0 0 50%;
+
+  /* just to show what's what */
+  border: 4px dotted rgb(0, 255, 34);
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+
+  /* just to show what's what */
+  border: 2px solid rgb(0, 204, 255);
+}
+
+li {
+
+  /* just to show what's what */
+  border: 1px dashed rgb(81, 139, 153);
+}
