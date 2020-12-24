@@ -5,7 +5,9 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    movieList: []
+    movieList: [],
+    catalogMovieList: [],
+    queueMovieList: []
   };
 
   componentDidMount() {
@@ -24,35 +26,78 @@ class App extends Component {
       { id: 7, title: "seven", poster: "images/7.jpg", isInQueue: false, queuePosition: 7 }
     ];
 
+    //// let's make two different lists
+    // one of movies to browse
+    let catalogList = mockDBdata.filter(
+      movie => !movie.isInQueue
+    );
+
+    // and one of movies user wants to watch
+    let queueList = mockDBdata.filter(
+      movie => movie.isInQueue
+    );
+
     this.setState({
-      movieList: mockDBdata
+      movieList: mockDBdata,
+      queueMovieList: queueList,
+      catalogMovieList: catalogList
     });
   }
 
   onClickAddOrRemove = ( movieID ) => {
-    console.log( 'from app: ', movieID )
+    let clickedMovie = this.state.movieList.find(m => m.id === movieID);
+
+    if (clickedMovie.isInQueue) {
+      this.sendMovieToCatalog(clickedMovie);
+    } else {
+      this.sendMovieToQueue(clickedMovie);
+    }
   }
 
+  sendMovieToCatalog(clickedMovie) {
+    // we don't want it in the queue!
+    clickedMovie.isInQueue = false;
 
+    // put back in the catalog
+    let newCatalog = [...this.state.catalogMovieList, clickedMovie];
+    newCatalog.sort((a, b) => a.id - b.id);
+
+    // take out of the queue
+    let newQueue = this.state.queueMovieList.filter(movie => movie.id !== clickedMovie.id);
+    newQueue.sort((a, b) => a.queuePosition - b.queuePosition);
+
+    this.setState({
+      catalogMovieList: newCatalog,
+      queueMovieList: newQueue
+    })
+  }
+
+  sendMovieToQueue(clickedMovie) {
+    // user wants to watch movie
+    clickedMovie.isInQueue = true;
+
+    // put in the queue
+    let newQueue = [...this.state.queueMovieList, clickedMovie];
+    newQueue.sort((a, b) => a.queuePosition - b.queuePosition);
+
+    // don't need to view in catalog
+    let newCatalog = this.state.catalogMovieList.filter(movie => movie.id !== clickedMovie.id);
+    newCatalog.sort((a, b) => a.id - b.id);
+
+    this.setState({
+      catalogMovieList: newCatalog,
+      queueMovieList: newQueue
+    })
+  }
 
   render() {
-
-    // movies to browse and pick
-    let catalogMovieList = this.state.movieList.filter(
-      movie => !movie.isInQueue
-    );
-
-    // movies that user is going to watch
-    let queueMovieList = this.state.movieList.filter(
-      movie => movie.isInQueue
-    );
 
     return (
       <>
         <header>AudryFlix</header>
         <section>
-          <Catalog catalogMovieList={catalogMovieList} onClickAddOrRemove={this.onClickAddOrRemove} />
-          <Queue     queueMovieList={queueMovieList}   onClickAddOrRemove={this.onClickAddOrRemove} />
+          <Catalog catalogMovieList={this.state.catalogMovieList} onClickAddOrRemove={this.onClickAddOrRemove} />
+          <Queue     queueMovieList={this.state.queueMovieList}   onClickAddOrRemove={this.onClickAddOrRemove} />
         </section>
       </>
     );
