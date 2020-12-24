@@ -5,7 +5,7 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    movieList: [],
+    movieList: []
   };
 
   componentDidMount() {
@@ -25,7 +25,7 @@ class App extends Component {
     ];
 
     this.setState({
-      movieList: mockDBdata,
+      movieList: mockDBdata
     });
   }
 

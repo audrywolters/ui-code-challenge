@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import Movie from "../Movie/Movie";
 import "./Queue.css";
 
-class Queue extends Component {
+class Queue extends Component {  
+  
+  // state = {
+    
+  // };
+  
   render() {
     return (
       <>
@@ -26,8 +30,4 @@ class Queue extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => ({
-  reduxState,
-});
-
-export default connect(mapStateToProps)(Queue);
+export default Queue;

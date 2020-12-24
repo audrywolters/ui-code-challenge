@@ -1,18 +1,13 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
 class Movie extends Component {
 
-  // will we ever use this
-  state = {
-    isInQueue: false,
-  };
+  // state = {
+    
+  // };
 
-  onClickAddToQueue = (e) => {
-    this.props.dispatch({
-      type: "CHANGE_QUEUE_STATUS",
-      action: { id: e.target.id },
-    });
+  changeQueueStatus() {
+    console.log('hi im the button');
   }
 
   render() {
@@ -22,7 +17,7 @@ class Movie extends Component {
         <img alt="the movie poster" src={this.props.poster} />
 
         {/* we need to if statement here too ( - ) */}
-        <button id={this.props.id} onClick={this.onClickAddToQueue}>
+        <button id={this.props.id} onClick={this.changeQueueStatus}>
           +
         </button>
         {/* 
@@ -38,8 +33,4 @@ class Movie extends Component {
   }
 }
 
-const putReduxStateonProps = (reduxState) => ({
-  reduxState
-});
-
-export default connect(putReduxStateonProps)(Movie);
+export default Movie;

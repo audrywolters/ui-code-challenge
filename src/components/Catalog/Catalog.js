@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import Movie from "../Movie/Movie";
 import "./Catalog.css";
 
 class Catalog extends Component {
+  
+  // state = {
+
+  // };
+
   render() {
     return (
       <>
@@ -26,8 +30,4 @@ class Catalog extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => ({
-  reduxState
-});
-
-export default connect(mapStateToProps)(Catalog);
+export default Catalog;
