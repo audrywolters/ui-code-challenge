@@ -2,20 +2,22 @@ import React, { Component } from "react";
 import "./Movie.css";
 
 class Movie extends Component {
-  // state = {
-
-  // };
 
   onClickMoveToOtherList = () => {
     this.props.onClickMoveToOtherList(this.props.id);
   };
+
+  onClickReorderQueue = (e) => {
+    let direction = e.target.innerHTML;
+    this.props.onClickReorderQueue(this.props.id, this.props.queuePosition, direction);
+  }
 
   render() {
     return (
       <div className="movieContainer">
         <span>{this.props.title}</span>
 
-        {/* no poster makes the queue order easier to understand */}
+        {/* no poster makes t */}
         {this.props.isInQueue ? (
           ""
         ) : (
@@ -31,11 +33,8 @@ class Movie extends Component {
           // user can reorder their queue
           this.props.isInQueue ? (
             <>
-              <button tag="up">UP</button>
-              <button tag="down">DOWN</button>
-              <br />
-              <br />
-              <span>{this.props.queuePosition}</span>
+              <button onClick={this.onClickReorderQueue}>UP</button>
+              <button onClick={this.onClickReorderQueue}>DOWN</button>
             </>
           ) : (
             // but they can't do anything to the catalog

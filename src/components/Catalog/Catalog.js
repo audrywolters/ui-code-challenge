@@ -3,9 +3,6 @@ import Movie from "../Movie/Movie";
 import "./Catalog.css";
 
 class Catalog extends Component {
-  // state = {
-
-  // };
 
   render() {
     return (

@@ -8,6 +8,11 @@ class Queue extends Component {
     queuePosition: 0
   };
 
+  onClickReorderQueue (movieID, queuePosition, direction) {
+
+    console.log('hi from queue');
+  }
+
   render() {
 
     return (
@@ -23,6 +28,7 @@ class Queue extends Component {
                 isInQueue={movie.isInQueue}
                 queuePosition={movie.queuePosition}
                 onClickMoveToOtherList={this.props.onClickMoveToOtherList}
+                onClickReorderQueue={this.onClickReorderQueue}
               />
             ))}
           </div>

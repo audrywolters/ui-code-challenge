@@ -11,10 +11,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.getMovieList();
+    this.getMovieLists();
   }
 
-  getMovieList() {
+  getMovieLists() {
     let mockDBdata = 
       [
       { id: 1, title: "one",   poster: "images/1.jpg", isInQueue: true,  queuePosition: 1 },
