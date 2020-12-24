@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   sendMovieToCatalog(clickedMovie) {
-    // we don't want it in the queue!
+    // user doesn't want to watch it anymore
     clickedMovie.isInQueue = false;
 
     // put back in the catalog
