@@ -10,16 +10,9 @@ class Movie extends Component {
 
   onClickAddToQueue = (e) => {
     this.props.dispatch({
-
       type: "CHANGE_QUEUE_STATUS",
-      action: { id: e.target.id, isInQueue: true },
+      action: { id: e.target.id },
     });
-
-    // hopefully this will happen automatically via reducer...
-    // // remove from DOM
-    // let movieLine = e.target.parentElement;
-    // // remove from Catalog!
-    // movieLine.remove();
   }
 
   render() {

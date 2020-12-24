@@ -5,23 +5,23 @@ import Queue from "../Queue/Queue";
 import "./Main.css";
 
 class Main extends Component {
-  componentDidMount() {
-    // ask redux to help us put the movies in the DOM
-    this.props.dispatch({ type: "GET_MOVIE_LIST" });
-  }
+  // componentDidMount() {
+  //   // ask redux to help us put the movies in the DOM
+  //   this.props.dispatch({ type: "GET_MOVIE_LIST" });
+  // }
 
   render() {
-    // all movies regardless of state
-    let allMovieList = this.props.reduxState.movieList;
+    console.log("reduxState: ", this.props.reduxState)
+ 
 
     // movies to browse and pick
-    let catalogMovieList = allMovieList.filter(
-      (movie) => movie.isInQueue === false
+    let catalogMovieList = this.props.reduxState.movieList.filter(
+      movie => movie.isInQueue === false
     );
 
     // movies that user is going to watch
-    let queueMovieList = allMovieList.filter(
-      (movie) => movie.isInQueue === true
+    let queueMovieList = this.props.reduxState.movieList.filter(
+      movie => movie.isInQueue === true
     );
 
     return (
