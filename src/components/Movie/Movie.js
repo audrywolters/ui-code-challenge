@@ -7,18 +7,20 @@ class Movie extends Component {
     
   // };
 
-  changeQueueStatus() {
-    console.log('hi im the button');
+  
+  onClickAddOrRemove = () => {
+    //console.log('click from movie ', this.props.id);
+    this.props.onClickAddOrRemove(this.props.id);
   }
 
   render() {
     return (
-      <div class="movieContainer">
+      <div className="movieContainer">
         <span>{this.props.title}</span>
         <img alt="the movie poster" src={this.props.poster} />
 
         {/* we need to if statement here too ( - ) */}
-        <button id={this.props.id} onClick={this.changeQueueStatus}>
+        <button id={this.props.id} onClick={this.onClickAddOrRemove}>
           +
         </button>
         {/* 

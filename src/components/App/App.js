@@ -29,6 +29,12 @@ class App extends Component {
     });
   }
 
+  onClickAddOrRemove = ( movieID ) => {
+    console.log( 'from app: ', movieID )
+  }
+
+
+
   render() {
 
     // movies to browse and pick
@@ -45,8 +51,8 @@ class App extends Component {
       <>
         <header>AudryFlix</header>
         <section>
-          <Catalog catalogMovieList={catalogMovieList} />
-          <Queue queueMovieList={queueMovieList} />
+          <Catalog catalogMovieList={catalogMovieList} onClickAddOrRemove={this.onClickAddOrRemove} />
+          <Queue     queueMovieList={queueMovieList}   onClickAddOrRemove={this.onClickAddOrRemove} />
         </section>
       </>
     );

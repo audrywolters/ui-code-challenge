@@ -3,7 +3,6 @@ import Movie from "../Movie/Movie";
 import "./Catalog.css";
 
 class Catalog extends Component {
-  
   // state = {
 
   // };
@@ -21,6 +20,7 @@ class Catalog extends Component {
                 title={movie.title}
                 poster={movie.poster}
                 isInQueue={movie.isInQueue}
+                onClickAddOrRemove={this.props.onClickAddOrRemove}
               />
             ))}
           </div>
