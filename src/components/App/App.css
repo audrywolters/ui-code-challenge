@@ -1,17 +1,28 @@
 /* colors */
-/* :root {
-  --blue:linear-gradient(rgb(0, 172, 217), rgb(90, 25, 250));
-  --white: #ffffff;
-} */
+:root {
+  --darkGradient:linear-gradient(rgb(0, 172, 217), rgb(90, 25, 250));
+  --solidPurple: rgb(85, 21, 238);
+  --darkGrey: rgb(50, 44, 64);
+}
+
+body { background-color: var(--blue); }
+
+/* border gray */
+  /* color: rgb(168, 194, 235); */
 
 html, body {
   font-family: "Source Sans Pro", sans-serif;
   margin: 0;
   background-color: coral;
+  color: white;
 }
 
 #app {
   height: 100vh;
+}
+
+#topHeader {
+  background-color: var(--solidPurple);
 }
 
 header {
@@ -36,7 +47,7 @@ article {
 }
 
 footer {
-  background-color: purple;
+  background-color: var(--darkGrey);
 }
 
 ul {
