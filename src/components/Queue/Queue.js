@@ -4,11 +4,12 @@ import "./Queue.css";
 
 class Queue extends Component {  
   
-  // state = {
-    
-  // };
-  
+  state = {
+    queuePosition: 0
+  };
+
   render() {
+
     return (
       <>
         <article className="queue">
@@ -19,8 +20,8 @@ class Queue extends Component {
                 key={movie.id}
                 id={movie.id}
                 title={movie.title}
-                poster={movie.poster}
                 isInQueue={movie.isInQueue}
+                queuePosition={movie.queuePosition}
                 onClickMoveToOtherList={this.props.onClickMoveToOtherList}
               />
             ))}
