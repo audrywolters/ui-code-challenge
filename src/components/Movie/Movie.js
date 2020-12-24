@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Movie.css';
 
 class Movie extends Component {
 
@@ -12,7 +13,7 @@ class Movie extends Component {
 
   render() {
     return (
-      <div>
+      <div class="movieContainer">
         <span>{this.props.title}</span>
         <img alt="the movie poster" src={this.props.poster} />
 

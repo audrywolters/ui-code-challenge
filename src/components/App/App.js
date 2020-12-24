@@ -33,12 +33,12 @@ class App extends Component {
 
     // movies to browse and pick
     let catalogMovieList = this.state.movieList.filter(
-      movie => movie.isInQueue === false
+      movie => !movie.isInQueue
     );
 
     // movies that user is going to watch
     let queueMovieList = this.state.movieList.filter(
-      movie => movie.isInQueue === true
+      movie => movie.isInQueue
     );
 
     return (
