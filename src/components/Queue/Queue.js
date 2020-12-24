@@ -4,17 +4,7 @@ import "./Queue.css";
 
 class Queue extends Component {  
   
-  state = {
-    queuePosition: 0
-  };
-
-  onClickReorderQueue (movieID, queuePosition, direction) {
-
-    console.log('hi from queue');
-  }
-
   render() {
-
     return (
       <>
         <article className="queue">
@@ -25,10 +15,11 @@ class Queue extends Component {
                 key={movie.id}
                 id={movie.id}
                 title={movie.title}
+                // poster={movie.poster} don't need a poster for the queue
                 isInQueue={movie.isInQueue}
                 queuePosition={movie.queuePosition}
                 onClickMoveToOtherList={this.props.onClickMoveToOtherList}
-                onClickReorderQueue={this.onClickReorderQueue}
+                onClickReorderQueue={this.props.onClickReorderQueue}
               />
             ))}
           </div>

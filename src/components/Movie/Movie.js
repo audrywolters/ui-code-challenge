@@ -9,7 +9,7 @@ class Movie extends Component {
 
   onClickReorderQueue = (e) => {
     let direction = e.target.innerHTML;
-    this.props.onClickReorderQueue(this.props.id, this.props.queuePosition, direction);
+    this.props.onClickReorderQueue(this.props.id, direction);
   }
 
   render() {

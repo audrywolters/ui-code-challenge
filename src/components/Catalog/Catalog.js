@@ -18,6 +18,7 @@ class Catalog extends Component {
                 poster={movie.poster}
                 isInQueue={movie.isInQueue}
                 onClickMoveToOtherList={this.props.onClickMoveToOtherList}
+                // onClickReorderQueue={this.onClickReorderQueue} catalog's order is its own business
               />
             ))}
           </div>

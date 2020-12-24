@@ -90,6 +90,82 @@ class App extends Component {
     });
   }
 
+  onClickReorderQueue = (movieID, direction) => {
+
+    let clickedMovie = this.state.queueMovieList.find(m => m.id === movieID);
+    // remove clicked from array!
+    let queue = this.state.queueMovieList.filter(movie => movie.id !== clickedMovie.id);
+
+    if (direction === 'UP') {
+      this.moveUp(clickedMovie, queue);
+    } else if (direction === 'DOWN') {
+      this.moveDown(clickedMovie, queue);
+    } else {
+      console.error('whoops. the button text is wierd: ' + direction);
+    }
+  }
+
+  moveUp(clickedMovie, queue) {
+    // this is watch sooner
+    // a.k.a. make number lower
+    for (let i=queue.length - 1; i>=0; i--) {
+
+      // AUDRY - could take this chunk out into a function
+      // but that is wierd
+      // idk
+
+      // find the one it will replace
+      if (queue[i].queuePosition < clickedMovie.queuePosition) {
+        // copy!
+        let exisiting = queue[i].queuePosition;
+        let wantsToChange = clickedMovie.queuePosition;
+
+        queue[i].queuePosition = wantsToChange;
+        clickedMovie.queuePosition = exisiting;
+
+        
+        //we need to put clicked back in array
+        queue.push(clickedMovie);
+        queue.sort((a, b) => a.queuePosition - b.queuePosition);
+
+        this.setState({
+          queueMovieList: queue
+        })
+        // done-zo! 
+        return;
+      }
+    }
+  }
+
+  moveDown(clickedMovie, queue) {
+    // this is watch later
+    // a.k.a. make number higher
+    for (let i=0; i<queue.length; i++) {
+
+      // find the one it will replace
+      if (queue[i].queuePosition > clickedMovie.queuePosition) {
+        // copy!
+        let exisiting = queue[i].queuePosition;
+        let wantsToChange = clickedMovie.queuePosition;
+
+        queue[i].queuePosition = wantsToChange;
+        clickedMovie.queuePosition = exisiting;
+
+        
+        //we need to put clicked back in array
+        queue.push(clickedMovie);
+        queue.sort((a, b) => a.queuePosition - b.queuePosition);
+
+        this.setState({
+          queueMovieList: queue
+        })
+        // done-zo! 
+        return;
+      }
+    }
+  }
+
+
   render() {
     return (
       <>
@@ -100,6 +176,7 @@ class App extends Component {
           />
           <Queue queueMovieList={this.state.queueMovieList}
                  onClickMoveToOtherList={this.onClickMoveToOtherList} 
+                 onClickReorderQueue={this.onClickReorderQueue} 
           />
         </section>
       </>
