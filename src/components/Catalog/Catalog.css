@@ -1,3 +1,5 @@
 .catalog {
   background-image: linear-gradient(rgb(0, 172, 217), rgb(90, 25, 250));
+  border: 1px solid var(--specialWhite);
+  border-width: 0 1px 0 0;
 }
