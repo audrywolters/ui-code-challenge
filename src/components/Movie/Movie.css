@@ -1,3 +1,23 @@
 .movieContainer {
-    /* border: 1px solid rgb(248, 239, 223); */
+  display: inline-block;
+  margin: 0 0 2em 2em;
+  height: 200px;
+  width: 150px;
+  border: 1px solid white;
+}
+
+.addRemoveButton {
+  width: 40px;
+  margin: 0 0 0 10px;
+}
+
+img {
+  height: 150px;
+  width: 100px;
+}
+
+/* somehow alternate line/div for queue/catalog movie item */
+li {
+  /* just to show what's what */
+  /* border: 1px dashed white; */
 }

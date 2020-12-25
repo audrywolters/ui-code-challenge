@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Movie.css";
 
 class Movie extends Component {
-
   onClickMoveToOtherList = () => {
     this.props.onClickMoveToOtherList(this.props.id);
   };
@@ -10,7 +9,7 @@ class Movie extends Component {
   onClickReorderQueue = (e) => {
     let direction = e.target.innerHTML;
     this.props.onClickReorderQueue(this.props.id, direction);
-  }
+  };
 
   render() {
     return (
@@ -24,10 +23,25 @@ class Movie extends Component {
           <img alt="Poster of movie" src={this.props.poster} />
         )}
 
-        <button id={this.props.id} onClick={this.onClickMoveToOtherList}>
-          {/* text reflects the action */}
-          {this.props.isInQueue ? "-" : "+"}
-        </button>
+        {/* different button for different action
+            AUDRY - could do switch for src only? */}
+        {this.props.isInQueue ? (
+          <input
+            className="addRemoveButton"
+            type="image"
+            alt="click to add to queue"
+            src="images/removeButton.png"
+            onClick={this.onClickMoveToOtherList}
+          ></input>
+        ) : (
+          <input
+            className="addRemoveButton"
+            type="image"
+            alt="click to remove from queue"
+            src="images/addButton.png"
+            onClick={this.onClickMoveToOtherList}
+          ></input>
+        )}
 
         {
           // user can reorder their queue
