@@ -13,7 +13,7 @@ class QueueMovie extends Component {
 
   render() {
     return (
-      <li className="queueMovieContainer">
+      <div className="queueMovieContainer">
         {/* button for move to queue */}
         <input
           className="addRemoveButton"
@@ -46,7 +46,7 @@ class QueueMovie extends Component {
         </div>
 
 
-      </li>
+      </div>
     );
   }
 }

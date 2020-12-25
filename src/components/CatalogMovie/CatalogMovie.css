@@ -1,15 +1,9 @@
 .catalogMovieContainer {
   display: inline-block;
-  margin: 0 0 2em 2em;
+  margin: 0 0 30px 30px;
   height: 225px;
   width: 150px;
-  /* border: 1px solid white;  */
   vertical-align: top;
-}
-
-.addRemoveButton {
-  width: 40px;
-  margin: 0 0 0 10px;
 }
 
 .moviePoster {
