@@ -29,27 +29,32 @@ body {
 
 #topHeader {
   background-color: var(--solidPurple);
+  font-size: 24pt;
+  border: none;
+  margin-bottom: 0;
 }
 
 header {
-  margin: 0;
-  padding: 20px;
-  text-align: center;
+  padding: 20px 20px 20px 33px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-size: 18pt;
+  color: white;
+  border: 1px solid var(--specialWhite);
+  border-width: 1px 0 1px 1px;
 }
 
 /* holds catalog and queue */
 section {
   display: flex;
-
-  /* AUDRY - this is wierd */
-  height: 90.2%;
-  /* you'll have to adjust or figure out wierd */
+  /* AUDRY - don't quite understand this height part yet */
+  height: 80%;
 }
 
 /* catalog and queue are each one */
 article {
-  flex: 0 0 50%;
-  overflow-y: scroll;
+  flex: 0 0 60%;
+  overflow: scroll;
 }
 
 /* catalog and queue share this */
@@ -59,6 +64,9 @@ article {
 }
 
 footer {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
   background-color: var(--darkGrey);
 }
 
