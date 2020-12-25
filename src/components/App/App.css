@@ -43,6 +43,12 @@ article {
   overflow: scroll;
 }
 
+/* catalog and queue share this */
+.addRemoveButton {
+  width: 40px;
+  margin: 0 0 0 10px;
+}
+
 footer {
   background-color: var(--darkGrey);
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Movie from "../Movie/Movie";
+import CatalogMovie from "../CatalogMovie/CatalogMovie";
 import "./Catalog.css";
 
 class Catalog extends Component {
@@ -11,14 +11,13 @@ class Catalog extends Component {
           <header>Catalog</header>
           <div>
             {this.props.catalogMovieList.map((movie) => (
-              <Movie
+              <CatalogMovie
                 key={movie.id}
                 id={movie.id}
                 title={movie.title}
                 poster={movie.poster}
                 isInQueue={movie.isInQueue}
                 onClickMoveToOtherList={this.props.onClickMoveToOtherList}
-                // onClickReorderQueue={this.onClickReorderQueue} catalog's order is its own business
               />
             ))}
           </div>

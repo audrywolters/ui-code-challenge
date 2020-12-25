@@ -18,7 +18,7 @@ class App extends Component {
     let mockDBdata = 
       [
       { id: 1, title: "Cool Movie",   poster: "images/1.jpg", isInQueue: false, queuePosition: 1 },
-      { id: 2, title: "Neat Movie",   poster: "images/2.jpg", isInQueue: false, queuePosition: 2 },
+      { id: 2, title: "Movie with a Really Long Name So We Can Check Text Wrap",   poster: "images/2.jpg", isInQueue: false, queuePosition: 2 },
       { id: 3, title: "Rad Movie", poster: "images/3.jpg", isInQueue: false, queuePosition: 3 },
       { id: 4, title: "Other Movie",  poster: "images/4.jpg", isInQueue: false, queuePosition: 4 },
       { id: 5, title: "Super Movie",  poster: "images/5.jpg", isInQueue: false, queuePosition: 5 },

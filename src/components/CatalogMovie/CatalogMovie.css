@@ -11,13 +11,12 @@
   margin: 0 0 0 10px;
 }
 
-img {
+.moviePoster {
   height: 150px;
   width: 100px;
 }
 
-/* somehow alternate line/div for queue/catalog movie item */
 li {
   /* just to show what's what */
-  /* border: 1px dashed white; */
+  border: 1px dashed white;
 }
