@@ -7,13 +7,13 @@ class QueueMovie extends Component {
   };
 
   onClickReorderQueue = (e) => {
-    let direction = e.target.innerHTML;
+    let direction = e.target.title;
     this.props.onClickReorderQueue(this.props.id, direction);
   };
 
   render() {
     return (
-      <li>
+      <li className="queueMovieContainer">
         {/* button for move to queue */}
         <input
           className="addRemoveButton"
@@ -23,11 +23,29 @@ class QueueMovie extends Component {
           onClick={this.onClickMoveToOtherList}
         ></input>
 
-        <span>{this.props.title}</span>
+        <div className="queueMovieTitle">{this.props.title}</div>
 
-        {/* button for moving up/down queue */}
-        <button onClick={this.onClickReorderQueue}>UP</button>
-        <button onClick={this.onClickReorderQueue}>DOWN</button>
+        {/* buttons for moving up/down queue */}
+        <div className="changeOrderButtonContainer">
+          <input
+            className="changeOrderButton"
+            title="UP"
+            type="image"
+            alt="click to move up in queue"
+            src="images/upButton.png"
+            onClick={this.onClickReorderQueue}
+          ></input>
+          <input
+            className="changeOrderButton"
+            title="DOWN"
+            type="image"
+            alt="click to move up in queue"
+            src="images/downButton.png"
+            onClick={this.onClickReorderQueue}
+          ></input>
+        </div>
+
+
       </li>
     );
   }

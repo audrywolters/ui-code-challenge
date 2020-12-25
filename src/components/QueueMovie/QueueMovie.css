@@ -1,8 +1,24 @@
-/* .movieContainer {
-  display: inline-block;
-  margin: 0 0 2em 2em;
-  height: 200px;
-  width: 150px;
-  border: 1px solid white;
-} */
+.queueMovieContainer {
+  border: 1px dashed white;
+  width: 100%;
+  height: 100px;
+}
 
+.queueMovieContainer > * {
+  display: inline-block;
+}
+
+.queueMovieTitle {
+  border: 1px solid pink; 
+  vertical-align: text-top;
+}
+
+.changeOrderButtonContainer {
+  width: 41px;
+  display: inline-block;
+  border: 1px dotted white;
+}
+
+.changeOrderButton {
+  width: 32px;
+}
