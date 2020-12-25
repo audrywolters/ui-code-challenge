@@ -186,7 +186,7 @@ class App extends Component {
                  onClickReorderQueue={this.onClickReorderQueue} 
           />
         </section>
-        <footer>hiiiii</footer>
+        <footer>Hi Protenus!</footer>
       </div>
     );
   }

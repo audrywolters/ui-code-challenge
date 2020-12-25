@@ -6,12 +6,12 @@
   background: transparent !important;
 }
 
-
 /* colors */
 :root {
-  --darkGradient: linear-gradient(rgb(0, 172, 217), rgb(90, 25, 250));
-  --solidPurple: rgb(85, 21, 238);
-  --darkGrey: rgb(50, 44, 64);
+  --catalogGradient: linear-gradient(rgb(112, 177, 163), rgb(57, 129, 158));
+  --queueGradient: linear-gradient(rgb(126, 182, 149), rgb(49, 133, 126));
+  --header: rgb(115, 103, 144);
+  --footer: rgb(82, 79, 87);
   --specialWhite: rgb(168, 194, 235);
 }
 
@@ -19,7 +19,7 @@ html,
 body {
   font-family: "Source Sans Pro", sans-serif;
   margin: 0;
-  background-color: var(--solidPurple);
+  background-color: var(--header);
   color: white;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 #topHeader {
-  background-color: var(--solidPurple);
+  background-color: var(--header);
   font-size: 24pt;
   border: none;
   margin-bottom: 0;
@@ -67,7 +67,7 @@ footer {
   margin: 0;
   padding: 10px;
   text-align: center;
-  background-color: var(--darkGrey);
+  background-color: var(--footer);
 }
 
 ul {
