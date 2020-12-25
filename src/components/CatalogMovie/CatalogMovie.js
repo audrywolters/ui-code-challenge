@@ -8,8 +8,7 @@ class CatalogMovie extends Component {
 
   render() {
     return (
-      <div className="movieContainer">
-        <span>{this.props.title}</span>
+      <div className="catalogMovieContainer">
         <img
           className="moviePoster"
           alt="poster of movie"
@@ -22,6 +21,8 @@ class CatalogMovie extends Component {
           src="images/addButton.png"
           onClick={this.onClickMoveToOtherList}
         ></input>
+
+        <span>{this.props.title}</span>
       </div>
     );
   }

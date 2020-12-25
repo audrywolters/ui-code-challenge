@@ -1,3 +1,12 @@
+
+::-webkit-scrollbar-track {
+  /* changed my keyboard and got yucky scrollbar whitespace */
+  /* oh no! it came back!! ghost in the machine...*/
+  /* display: none !important; */
+  background: transparent !important;
+}
+
+
 /* colors */
 :root {
   --darkGradient: linear-gradient(rgb(0, 172, 217), rgb(90, 25, 250));
@@ -13,7 +22,6 @@ body {
   background-color: var(--solidPurple);
   color: white;
 }
-
 
 #app {
   height: 100vh;
@@ -41,13 +49,11 @@ section {
 /* catalog and queue are each one */
 article {
   flex: 0 0 50%;
-  overflow: scroll;
+  overflow-y: scroll;
+  /* sorry, deal with wierd hidden stuff. :P */
+  overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  /* changed my keyboard and got yucky scrollbar whitespace */
-  background: transparent;
-}
 
 /* catalog and queue share this */
 .addRemoveButton {
