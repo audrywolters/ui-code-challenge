@@ -48,12 +48,12 @@ header {
 section {
   display: flex;
   /* AUDRY - don't quite understand this height part yet */
-  height: 80%;
+  height: 85%;
 }
 
 /* catalog and queue are each one */
 article {
-  flex: 0 0 60%;
+  flex: 0 0 65%;
   overflow: scroll;
 }
 

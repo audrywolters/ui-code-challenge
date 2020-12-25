@@ -17,13 +17,20 @@ class App extends Component {
   getMovieLists() {
     let mockDBdata = 
       [
-      { id: 1, title: "Cool Movie",   poster: "images/1.jpg", isInQueue: true, queuePosition: 1 },
-      { id: 2, title: "Movie with a Really Long Name So We Can Check Text Wrap",   poster: "images/2.jpg", isInQueue: false, queuePosition: 2 },
-      { id: 3, title: "Movie with with Long name", poster: "images/3.jpg", isInQueue: true, queuePosition: 3 },
-      { id: 4, title: "Other Movie",  poster: "images/4.jpg", isInQueue: false, queuePosition: 4 },
-      { id: 5, title: "Super Movie",  poster: "images/5.jpg", isInQueue: false, queuePosition: 5 },
-      { id: 6, title: "Scary Movie",   poster: "images/6.jpg", isInQueue: false, queuePosition: 6 },
-      { id: 7, title: "Exciting Movie", poster: "images/7.jpg", isInQueue: false, queuePosition: 7 }
+        { id: 1, title: "Cool Movie",   poster: "images/1.jpg", isInQueue: true, queuePosition: 1 },
+        { id: 2, title: "Movie with a Really Long Name So We Can Check Text Wrap",   poster: "images/2.jpg", isInQueue: false, queuePosition: 2 },
+        { id: 3, title: "Movie with with Long name", poster: "images/3.jpg", isInQueue: true, queuePosition: 3 },
+        { id: 4, title: "Other Movie",  poster: "images/4.jpg", isInQueue: false, queuePosition: 4 },
+        { id: 5, title: "Super Movie",  poster: "images/5.jpg", isInQueue: false, queuePosition: 5 },
+        { id: 6, title: "Scary Movie",   poster: "images/6.jpg", isInQueue: false, queuePosition: 6 },
+        { id: 7, title: "Exciting Movie", poster: "images/7.jpg", isInQueue: false, queuePosition: 7 },
+        { id: 8, title: "Neat Movie",   poster: "images/1.jpg", isInQueue: true, queuePosition: 8 },
+        { id: 9, title: "Very longed named movies can be a pain for developers",   poster: "images/2.jpg", isInQueue: false, queuePosition: 9 },
+        { id: 10, title: "Adventures with Mervyn the Cat", poster: "images/3.jpg", isInQueue: true, queuePosition: 10 },
+        { id: 11, title: "Cup of Coffee",  poster: "images/4.jpg", isInQueue: false, queuePosition: 11 },
+        { id: 12, title: "My iPhone",  poster: "images/5.jpg", isInQueue: false, queuePosition: 12 },
+        { id: 13, title: "Tape Dispenser",   poster: "images/6.jpg", isInQueue: false, queuePosition: 13 },
+        { id: 14, title: "These are things on my desk", poster: "images/7.jpg", isInQueue: false, queuePosition: 14 }
     ];
 
     //// let's make two different lists
